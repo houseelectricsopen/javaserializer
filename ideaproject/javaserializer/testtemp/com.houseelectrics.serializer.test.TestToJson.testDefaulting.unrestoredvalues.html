@@ -1,0 +1,44 @@
+<html>
+    <script>
+    
+function attachId2Array(id, arr) {arr._id_=id; arr._a_='y'; return arr;}
+
+var testdata=
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
+  , stringValuesArr:
+    attachId2Array(2,[
+      {_id_:3 ,_t_:'_1'}
+    , 
+      {_id_:4 ,_t_:'_1'}
+    , 
+      {_id_:5 ,_t_:'_1'}
+    ])
+  }
+;
+
+</script>
+    <body>
+<pre>
+testdata=>
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
+  , stringValuesArr:
+    attachId2Array(2,[
+      {_id_:3 ,_t_:'_1'}
+    , 
+      {_id_:4 ,_t_:'_1'}
+    , 
+      {_id_:5 ,_t_:'_1'}
+    ])
+  }
+
+testdata.stringValues.str1==<script>document.write(testdata.stringValues.str1)</script>
+testdata.stringValues.str3==<script>document.write(testdata.stringValues.str3)</script>
+testdata.stringValues.str2==<script>document.write(testdata.stringValues.str2)</script>
+testdata.stringValuesArr[0].str1==<script>document.write(testdata.stringValuesArr[0].str1)</script>
+testdata.i4==<script>document.write(testdata.i4)</script>
+testdata.i2==<script>document.write(testdata.i2)</script>
+testdata.i1==<script>document.write(testdata.i1)</script>
+
+</pre>

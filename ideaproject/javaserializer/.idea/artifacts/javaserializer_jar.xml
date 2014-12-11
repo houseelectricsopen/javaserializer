@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="javaserializer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaserializer_jar</output-path>
+    <root id="archive" name="javaserializer.jar">
+      <element id="module-output" name="javaserializer" />
+    </root>
+  </artifact>
+</component>

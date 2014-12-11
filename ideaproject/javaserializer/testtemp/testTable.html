@@ -1,0 +1,850 @@
+<html>
+    <script>
+    
+var assertEqual = function(expected, actual, message)
+{
+    if (expected!=actual)
+    {
+        throw message +  ' expected:' + expected + ' actual:' + actual;
+    }
+};
+var _typeAlias2LeafDefaults_ = 
+  {_t_:'_2', _0:
+    {_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {_t_:'_2', i4:432102345, i2:23456789, i1:123456789}
+    }
+  , _1:
+    {_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {_t_:'_2', str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+function _resolveLeafDefaults(o)
+{
+    if (o._visited_) return o;
+    var typeAlias = o._t_;
+    if (!typeAlias) return o;
+    for (p in o)
+    {
+        if (p=='_t_') continue;
+        var val = o[p];
+        // if its an array iterate and explore
+        if (typeof(val._a_)!='undefined')
+        {
+            for (var done=0; done<val.length; done++)
+            {
+                _resolveLeafDefaults(val[done]);
+            }
+            continue;
+        }
+        else
+        {
+            if (val._t_)
+            {
+                _resolveLeafDefaults(o[p]);
+            }
+
+        }
+    }
+    var _type2Defaults_ = _typeAlias2LeafDefaults_[typeAlias].propertyName2DefaultValue;
+    // do the defaults
+    for (var p in _type2Defaults_)
+    {
+        if (typeof(o[p])==='undefined') {o[p]=_type2Defaults_[p];}
+    }
+    o._visited_=true;
+    return o;
+}
+
+//mark array so browser specific testing is not required
+function _a_(arr) {arr._a_='y'; return arr;}
+
+function test_com_houseelectrics_serializer_test_TestToJson_demoDefaultingForUserguide()
+{
+var defaulted=_resolveLeafDefaults(
+  {_t_:'_0', stringValues:
+    {_t_:'_1'}
+  , stringValuesArr:
+    _a_([
+      {_t_:'_1'}
+    , 
+      {_t_:'_1'}
+    , 
+      {_t_:'_1'}
+    ])
+  }
+);
+assertEqual('bcdefghijklmno',defaulted.stringValuesArr[1].str2, 'defaulted.stringValuesArr[1].str2');
+assertEqual('John Malcom Eldritch Ebeneezer Ozwald Smith',defaulted.stringValuesArr[2].aReallyReallyReallyLongName, 'defaulted.stringValuesArr[2].aReallyReallyReallyLongName');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testIndexedWithNull()
+{
+var testdata=
+  {strings:
+    [null, "ddd", "ccc", null]
+  , ints:null}
+;
+assertEqual(null,testdata.strings[3], 'testdata.strings[3]');
+assertEqual(null,testdata.strings[0], 'testdata.strings[0]');
+assertEqual('ddd',testdata.strings[1], 'testdata.strings[1]');
+assertEqual('ccc',testdata.strings[2], 'testdata.strings[2]');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDemoIndexedPropertiesForUserguide()
+{
+var testdata=
+  {strings:
+    ["eee", "ddd", "ccc", "bbb"]
+  , ints:
+    [6, 5, 4, 3, 2, 1]
+  }
+;
+assertEqual(6,testdata.ints[0], 'testdata.ints[0]');
+assertEqual(1,testdata.ints[5], 'testdata.ints[5]');
+assertEqual('bbb',testdata.strings[3], 'testdata.strings[3]');
+assertEqual('eee',testdata.strings[0], 'testdata.strings[0]');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDemoHashedPropertiesForUserguide()
+{
+var testdata=
+  {Name2Number:
+    {two:2, one:1, three:3, four:4}
+  , Number2Name:
+    {1:"one", 2:"two", 3:"three", 4:"four"}
+  }
+;
+assertEqual(1,testdata.Name2Number['one'], 'testdata.Name2Number[\'one\']');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonFields()
+{
+var testdata=
+  {sub:
+    {subSub:
+      {greeting:"hi", ageYears:32, heightMetres:1.23, seasons:
+        ["Spring", "Summer", "Autumn", "Winter"]
+      }
+    }
+  }
+;
+assertEqual(32,testdata.sub.subSub.ageYears, 'testdata.sub.subSub.ageYears');
+assertEqual('hi',testdata.sub.subSub.greeting, 'testdata.sub.subSub.greeting');
+assertEqual(1.23,testdata.sub.subSub.heightMetres, 'testdata.sub.subSub.heightMetres');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonProperties()
+{
+var testdata=
+  {TheSub:
+    {TheSubSub:
+      {Greeting:"hi", AgeYears:32, HeightMetres:1.23, Seasons:
+        ["Spring", "Summer", "Autumn", "Winter"]
+      , GoodYears:
+        [1966, 1973]
+      }
+    }
+  }
+;
+assertEqual(1.23,testdata.TheSub.TheSubSub.HeightMetres, 'testdata.TheSub.TheSubSub.HeightMetres');
+assertEqual('hi',testdata.TheSub.TheSubSub.Greeting, 'testdata.TheSub.TheSubSub.Greeting');
+assertEqual(32,testdata.TheSub.TheSubSub.AgeYears, 'testdata.TheSub.TheSubSub.AgeYears');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaProperties()
+{
+var testdata=
+  {ALong:123, ALongRef:234, AInt:324, AIntRef:345, AShort:124, AChar:"c", AString:"hi"}
+;
+assertEqual('hi',testdata.AString, 'testdata.AString');
+assertEqual(324,testdata.AInt, 'testdata.AInt');
+assertEqual(345,testdata.AIntRef, 'testdata.AIntRef');
+assertEqual('c',testdata.AChar, 'testdata.AChar');
+assertEqual(123,testdata.ALong, 'testdata.ALong');
+assertEqual(234,testdata.ALongRef, 'testdata.ALongRef');
+assertEqual(124,testdata.AShort, 'testdata.AShort');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaFields()
+{
+var testdata=
+  {aLong:23, aLongRef:789, aInt:463, aIntRef:247, aShort:124, aChar:"c", aString:null, aString2:"hi"}
+;
+assertEqual('hi',testdata.aString2, 'testdata.aString2');
+assertEqual(124,testdata.aShort, 'testdata.aShort');
+assertEqual(789,testdata.aLongRef, 'testdata.aLongRef');
+assertEqual(463,testdata.aInt, 'testdata.aInt');
+assertEqual(null,testdata.aString, 'testdata.aString');
+assertEqual('c',testdata.aChar, 'testdata.aChar');
+assertEqual(247,testdata.aIntRef, 'testdata.aIntRef');
+assertEqual(23,testdata.aLong, 'testdata.aLong');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonPropertiesIndexed()
+{
+var testdata=
+  {TheSub:
+    {TheSubSub:
+      {Greeting:"hi", AgeYears:32, HeightMetres:1.23, Seasons:
+        ["Spring", "Summer", "Autumn", "Winter"]
+      , GoodYears:
+        [1966, 1973]
+      }
+    }
+  }
+;
+assertEqual(1973,testdata.TheSub.TheSubSub.GoodYears[1], 'testdata.TheSub.TheSubSub.GoodYears[1]');
+assertEqual('Summer',testdata.TheSub.TheSubSub.Seasons[1], 'testdata.TheSub.TheSubSub.Seasons[1]');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testSimpleMap()
+{
+var testdata=
+  {ooo:null, abc:"hello", cba:"goodnight", xyz:"goodday"}
+;
+assertEqual(null,testdata.ooo, 'testdata.ooo');
+assertEqual('hello',testdata.abc, 'testdata.abc');
+assertEqual('goodnight',testdata.cba, 'testdata.cba');
+assertEqual('goodday',testdata.xyz, 'testdata.xyz');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testTypedMap()
+{
+var testdata=
+  {int2String:
+    {1:"uno", 2:"zwei", 3:"trois", 5:"vier"}
+  }
+;
+assertEqual('trois',testdata.int2String[3], 'testdata.int2String[3]');
+assertEqual('uno',testdata.int2String[1], 'testdata.int2String[1]');
+assertEqual('zwei',testdata.int2String[2], 'testdata.int2String[2]');
+assertEqual('vier',testdata.int2String[5], 'testdata.int2String[5]');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testToJsonHierarchy()
+{
+var testdata=
+  {name:null, branches:
+    [
+      {name:"level0_index0", branches:
+        [
+          {name:"level1_index0", branches:
+            [
+              {name:"level2_index0", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            , 
+              {name:"level2_index1", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            ]
+          }
+        , 
+          {name:"level1_index1", branches:
+            [
+              {name:"level2_index0", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            , 
+              {name:"level2_index1", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    , 
+      {name:"level0_index1", branches:
+        [
+          {name:"level1_index0", branches:
+            [
+              {name:"level2_index0", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            , 
+              {name:"level2_index1", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            ]
+          }
+        , 
+          {name:"level1_index1", branches:
+            [
+              {name:"level2_index0", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            , 
+              {name:"level2_index1", branches:
+                [
+                  {name:"level3_index0", branches:
+                    []
+                  }
+                , 
+                  {name:"level3_index1", branches:
+                    []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+;
+assertEqual('level2_index0',testdata.branches[0].branches[0].branches[0].name, 'testdata.branches[0].branches[0].branches[0].name');
+
+} 
+
+function resolveRefs(o, ref2o) 
+{
+    if (!o) return;
+    if (!ref2o) ref2o = {};
+    function perSubO(o, subo, ref2o, suboKey)
+    {
+        if (subo && subo._ref_)
+        {
+            o[suboKey]=ref2o[subo._ref_];
+        }
+        else if (subo && subo._id_)
+        {
+            ref2o[subo._id_]=subo;
+            resolveRefs(subo, ref2o);
+        }
+    }
+//is array ?
+//this condition is superfluous since this sam code write the array !
+    if ((o._a_) /*|| (Array && Array.isArray && Array.isArray(o))*/)
+    {
+        for (var i =0; i<o.length; i++)
+        {
+            var subo=o[i];
+            perSubO(o, subo, ref2o, i);
+        }
+    }
+    else
+    {
+        for (var p in o)
+        {
+            var subo = o[p];
+            perSubO(o, subo, ref2o, p);
+        }
+    }
+    return o;
+}
+
+function test_com_houseelectrics_serializer_test_TestToJson_testUseReferencesSimple()
+{
+var root=resolveRefs({_id_:0 , subo1:{_id_:1 , stringVal:"123456", intVal:4321}, subo2:{_ref_:1}, subo3:{_ref_:1}});
+assertEqual('123456',root.subo3.stringVal, 'root.subo3.stringVal');
+assertEqual(4321,root.subo3.intVal, 'root.subo3.intVal');
+
+} 
+
+function attachId2Array(id, arr) {arr._id_=id; arr._a_='y'; return arr;}
+
+function test_com_houseelectrics_serializer_test_TestToJson_testUseReferences()
+{
+var withRefRoot=resolveRefs(
+  {_id_:0 , Name:"root", Branches:
+    attachId2Array(1,[
+      {_id_:2 , Name:null, Branches:
+        attachId2Array(3,[
+          {_id_:4 , Name:"level0_index0", Branches:
+            attachId2Array(5,[
+              {_id_:6 , Name:"level1_index0", Branches:
+                attachId2Array(7,[
+                  {_id_:8 , Name:"level2_index0", Branches:
+                    attachId2Array(9,[])
+                  }
+                , 
+                  {_id_:10 , Name:"level2_index1", Branches:
+                    attachId2Array(11,[])
+                  }
+                , 
+                  {_id_:12 , Name:"level2_index2", Branches:
+                    attachId2Array(13,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:14 , Name:"level1_index1", Branches:
+                attachId2Array(15,[
+                  {_id_:16 , Name:"level2_index0", Branches:
+                    attachId2Array(17,[])
+                  }
+                , 
+                  {_id_:18 , Name:"level2_index1", Branches:
+                    attachId2Array(19,[])
+                  }
+                , 
+                  {_id_:20 , Name:"level2_index2", Branches:
+                    attachId2Array(21,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:22 , Name:"level1_index2", Branches:
+                attachId2Array(23,[
+                  {_id_:24 , Name:"level2_index0", Branches:
+                    attachId2Array(25,[])
+                  }
+                , 
+                  {_id_:26 , Name:"level2_index1", Branches:
+                    attachId2Array(27,[])
+                  }
+                , 
+                  {_id_:28 , Name:"level2_index2", Branches:
+                    attachId2Array(29,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:30 , Name:"level0_index1", Branches:
+            attachId2Array(31,[
+              {_id_:32 , Name:"level1_index0", Branches:
+                attachId2Array(33,[
+                  {_id_:34 , Name:"level2_index0", Branches:
+                    attachId2Array(35,[])
+                  }
+                , 
+                  {_id_:36 , Name:"level2_index1", Branches:
+                    attachId2Array(37,[])
+                  }
+                , 
+                  {_id_:38 , Name:"level2_index2", Branches:
+                    attachId2Array(39,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:40 , Name:"level1_index1", Branches:
+                attachId2Array(41,[
+                  {_id_:42 , Name:"level2_index0", Branches:
+                    attachId2Array(43,[])
+                  }
+                , 
+                  {_id_:44 , Name:"level2_index1", Branches:
+                    attachId2Array(45,[])
+                  }
+                , 
+                  {_id_:46 , Name:"level2_index2", Branches:
+                    attachId2Array(47,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:48 , Name:"level1_index2", Branches:
+                attachId2Array(49,[
+                  {_id_:50 , Name:"level2_index0", Branches:
+                    attachId2Array(51,[])
+                  }
+                , 
+                  {_id_:52 , Name:"level2_index1", Branches:
+                    attachId2Array(53,[])
+                  }
+                , 
+                  {_id_:54 , Name:"level2_index2", Branches:
+                    attachId2Array(55,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:56 , Name:"level0_index2", Branches:
+            attachId2Array(57,[
+              {_id_:58 , Name:"level1_index0", Branches:
+                attachId2Array(59,[
+                  {_id_:60 , Name:"level2_index0", Branches:
+                    attachId2Array(61,[])
+                  }
+                , 
+                  {_id_:62 , Name:"level2_index1", Branches:
+                    attachId2Array(63,[])
+                  }
+                , 
+                  {_id_:64 , Name:"level2_index2", Branches:
+                    attachId2Array(65,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:66 , Name:"level1_index1", Branches:
+                attachId2Array(67,[
+                  {_id_:68 , Name:"level2_index0", Branches:
+                    attachId2Array(69,[])
+                  }
+                , 
+                  {_id_:70 , Name:"level2_index1", Branches:
+                    attachId2Array(71,[])
+                  }
+                , 
+                  {_id_:72 , Name:"level2_index2", Branches:
+                    attachId2Array(73,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:74 , Name:"level1_index2", Branches:
+                attachId2Array(75,[
+                  {_id_:76 , Name:"level2_index0", Branches:
+                    attachId2Array(77,[])
+                  }
+                , 
+                  {_id_:78 , Name:"level2_index1", Branches:
+                    attachId2Array(79,[])
+                  }
+                , 
+                  {_id_:80 , Name:"level2_index2", Branches:
+                    attachId2Array(81,[])
+                  }
+                ])
+              }
+            ])
+          }
+        ])
+      }
+    , 
+      {_ref_:2}
+    , 
+      {_ref_:2}
+    ])
+  }
+);
+assertEqual('level0_index1',withRefRoot.Branches[2].Branches[1].Name, 'withRefRoot.Branches[2].Branches[1].Name');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_defaultMap()
+{
+var testdata=
+  {_id_:0 , com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData:
+    {_id_:1 , fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {_id_:2 , i4:432102345, i2:23456789, i1:123456789}
+    }
+  , com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData_StringValues:
+    {_id_:3 , fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {_id_:4 , str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+assertEqual(null,testdata.com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData_StringValues.propertyName2DefaultValue.str3, 'testdata.com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData_StringValues.propertyName2DefaultValue.str3');
+assertEqual(123456789,testdata.com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData.propertyName2DefaultValue.i1, 'testdata.com_houseelectrics_serializer_test_TestToJson_ManyDefaultsTestData.propertyName2DefaultValue.i1');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaulting()
+{
+var testdata=
+  {_id_:0 , _0:
+    {_id_:1 , fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {_id_:2 , i4:432102345, i2:23456789, i1:123456789}
+    }
+  , _1:
+    {_id_:3 , fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {_id_:4 , str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+assertEqual(null,testdata._1.propertyName2DefaultValue.str3, 'testdata._1.propertyName2DefaultValue.str3');
+assertEqual(123456789,testdata._0.propertyName2DefaultValue.i1, 'testdata._0.propertyName2DefaultValue.i1');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_unrestoredvalues()
+{
+var testdata=
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
+  , stringValuesArr:
+    attachId2Array(2,[
+      {_id_:3 ,_t_:'_1'}
+    , 
+      {_id_:4 ,_t_:'_1'}
+    , 
+      {_id_:5 ,_t_:'_1'}
+    ])
+  }
+;
+assertEqual(null,testdata.stringValues.str1, 'testdata.stringValues.str1');
+assertEqual(null,testdata.stringValues.str3, 'testdata.stringValues.str3');
+assertEqual(null,testdata.stringValues.str2, 'testdata.stringValues.str2');
+assertEqual(null,testdata.stringValuesArr[0].str1, 'testdata.stringValuesArr[0].str1');
+assertEqual(null,testdata.i4, 'testdata.i4');
+assertEqual(6789,testdata.i2, 'testdata.i2');
+assertEqual(null,testdata.i1, 'testdata.i1');
+
+} 
+
+var _typeAlias2LeafDefaults_ = 
+  {_id_:0 ,_t_:'_2', _0:
+    {_id_:1 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {_id_:2 ,_t_:'_2', i4:432102345, i2:23456789, i1:123456789}
+    }
+  , _1:
+    {_id_:3 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {_id_:4 ,_t_:'_2', str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+function _resolveLeafDefaults(o)
+{
+    if (o._visited_) return o;
+    var typeAlias = o._t_;
+    if (!typeAlias) return o;
+    for (p in o)
+    {
+        if (p=='_t_') continue;
+        var val = o[p];
+        // if its an array iterate and explore
+        if (typeof(val._a_)!='undefined')
+        {
+            for (var done=0; done<val.length; done++)
+            {
+                _resolveLeafDefaults(val[done]);
+            }
+            continue;
+        }
+        else
+        {
+            if (val._t_)
+            {
+                _resolveLeafDefaults(o[p]);
+            }
+
+        }
+    }
+    var _type2Defaults_ = _typeAlias2LeafDefaults_[typeAlias].propertyName2DefaultValue;
+    // do the defaults
+    for (var p in _type2Defaults_)
+    {
+        if (typeof(o[p])==='undefined') {o[p]=_type2Defaults_[p];}
+    }
+    o._visited_=true;
+    return o;
+}
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_resolveLeaves()
+{
+var defaulted=_resolveLeafDefaults(
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
+  , stringValuesArr:
+    attachId2Array(2,[
+      {_id_:3 ,_t_:'_1'}
+    , 
+      {_id_:4 ,_t_:'_1'}
+    , 
+      {_id_:5 ,_t_:'_1'}
+    ])
+  }
+);
+assertEqual('abcdefghijk',defaulted.stringValues.str1, 'defaulted.stringValues.str1');
+assertEqual(null,defaulted.stringValues.str3, 'defaulted.stringValues.str3');
+assertEqual('bcdefghijklmno',defaulted.stringValues.str2, 'defaulted.stringValues.str2');
+assertEqual('abcdefghijk',defaulted.stringValuesArr[0].str1, 'defaulted.stringValuesArr[0].str1');
+assertEqual(4.32102345E8,defaulted.i4, 'defaulted.i4');
+assertEqual(6789.0,defaulted.i2, 'defaulted.i2');
+assertEqual(1.23456789E8,defaulted.i1, 'defaulted.i1');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_simplealias()
+{
+var testdata=
+  {com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData_:
+    {fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {i4:432102345, i2:23456789, i1:123456789}
+    }
+  , com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData$StringValues_:
+    {fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+assertEqual(null,testdata.com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData$StringValues_.propertyName2DefaultValue.str3, 'testdata.com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData$StringValues_.propertyName2DefaultValue.str3');
+assertEqual(123456789,testdata.com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData_.propertyName2DefaultValue.i1, 'testdata.com_houseelectrics_serializer_test_TestToJson$ManyDefaultsTestData_.propertyName2DefaultValue.i1');
+
+} 
+
+function test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_numericliaser()
+{
+var testdata=
+  {_0:
+    {fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {i4:432102345, i2:23456789, i1:123456789}
+    }
+  , _1:
+    {fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    }
+  }
+;
+assertEqual(null,testdata._1.propertyName2DefaultValue.str3, 'testdata._1.propertyName2DefaultValue.str3');
+assertEqual(123456789,testdata._0.propertyName2DefaultValue.i1, 'testdata._0.propertyName2DefaultValue.i1');
+
+} 
+
+
+function runtest(passimageid, testFunction, clear)
+{
+    var theimage = document.getElementById(passimageid);
+    if (clear)
+    {
+        theimage.src=runtest.questionmarkimagesrc;
+        return;
+    }
+    try
+    {
+        testFunction();
+        theimage.src=runtest.tickimagesrc;
+    }
+    catch (err)
+    {
+        theimage.src=runtest.crossimagesrc;
+    }
+}
+runtest.crossimagesrc='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAagAAAGoB3Bi5tQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIVSURBVDiNndXfa81xHMfxx3fHcCPJr1IjpcXFJHdu/AWyEnPHXFIuFkWZtZqk1SIsUy6IZhdkjGwxy4XQXGzKMooxTqwR2sxm28fNzuns7JzNOZ9617fer56fz/vzfr++HyEEuQbmPeTWbSpRMC2XD/AedYEQCM+5d4iivIFX2TfKRAIYCP30NVCaM/AMW77zIxWWiGHGmqgtkLJqoqikOYoqoyiKSVtHo2hVKZeXsDg9BwsonORXcvcjFPfxOhC6aK1mdSK3mcIXPMh0skS0cT1Z8gGK3tKVKojz4QrbQghaOT8brIvOchaFEChnZQ/PMgl/M9bBjVEms8E+Eq9mfbLL7XOUMlv85M9Ftk+bw3p2DPAtV9g4oZFjM4Z+ahy2fqI/F2AbjRldlPg4Rcn7qS7PFb8YP8HuWYEhBMdY84bn/wMdYvQmJxGb1cv7WdrD4/8tvZNHVazLCqynOJ7jfcaJX6ZsBvA4K97Rnc8IjTB+l7NJL++NooVlNK1lY7pP/zI5yGAmDyfWQmLDjCRP94TGbLu3UHeJDXFeZtN00IyYEII2arMJn9KS6GQNy3u5n655RVcZy0II3OHgWBav9tK9h+Wp97yT+Z1cmJzSfOZLFZuSXW7hYibYF76eTBGmRzuHBxg6x66090Z0i9MTaUPbwM65/uAVbMjqlCaqx5iYIFyjKp/Ha8YcXqXiJtfyhYUQ/AM+zdCyi+sN3QAAAABJRU5ErkJggg==';
+runtest.tickimagesrc='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAagAAAGoB3Bi5tQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHGSURBVEiJpdRfaI1hGADw305alGg3rlYu3MmFO8uFuXDhzm4kXMjCLoQWtbJLuUBNboiWG8Ra5LBShG0yWWlIlAxN8iex2s6ZY+x1s17ny9nOOd/53t6b93m+X8/3fc/zCSGoZWu20KB+WQeQqQkLIZB1WJhdg+5k1HDVHapbrkl7PKg3VFt1D5yP1X3zQZuG9NgpzfJ+RfCe9hCCdBh1nhmI2EevrLEoPXjJnogFQVZrjFWNbdFgzLuIjXqMTHrwruMRmxFc0JKIV4UdtcoPkxF84fZ/OVWBw65FrOC3M9anBnVrMW0mgiN6SuZVhK1U77WnEcuZcszq9GCfjkSbPHJuztyyWIdGX3yN2HfjOq1IDw7pTlR334l58+cNnrZWrmheP/tkt2UVgU7aYaslieBz/Ynq+nSWfaIQAl02GJfz0MUY6NFa1CTBe2+ss7gsaL9GY0bjKN100C5LjXmbqO6yvRV1hGG3Ejfm5PUXTUQQvDSCBZWBN+xTMJ0AiteM4KxtlWD/3uF1baYUSoJPDFSKJb/yVTvl/UxgBX902ZgKDCHQa7ucfNGIZavBSja2KzabMGlCwRFNNYOz6Ca9c/8A5tt/AWXIMuPZc9CQAAAAAElFTkSuQmCC';
+runtest.questionmarkimagesrc='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAYCAYAAAAcYhYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAVQAAAFUBceom8QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGQSURBVDiNpdS/axRBGMbxz56JMXhY2aRR7AwIsbstgo34J1io2NgottpZCtqp2AviHyBoK9poMSJI/NFoECws0khQ/MGBl9di57jNsXe74gvDPvvOw3femXmZIiL8byw0ZstiAadwFAewjGd4KsVo2l7sqqQs9uMGzuJgA34Ll6R41Awpi0N4jLU8t43nGGIdKzk/wgUpHuyGlEUPb3AMgWu4JcUwL7CIq7lK+I4VKX6BiBADZ2Ig8rgeERrHwN2a7/w438vki/k7xJ2GsxjH/Zo+Mha9qcSmFF/nQOr9sDWBVOexhA94MgcAJ2r681gUnZutLA7jPfp4h+NS7FSVdAMUuJcBI1weA7pDqus9mfVNKV7UJ9u3UxZreIVFvMS6FH/qli6VXMmAHzg3DWiHlMVenM5/D6X41GRrq2QZ+7LemGVqg+yp6f4sU/N7Monfqs58nUdjdG+2OdFWSRXVS7eKL1JsT0+3X3FZ3FZd71uThvtHSNXmS1mvNhm6bOcjdrCJb02GLm3fR0jxc5blL/VsmgRQaoWoAAAAAElFTkSuQmCC';
+
+</script>
+<body onload="runAllTests(false)">
+<h1>
+Serializer Browser Compatibility Tests - created by com.houseelectrics.serializer.test.JSExecuteUtil at Wed Dec 03 00:46:53 GMT 2014 
+</h1>
+<script> 
+function runAllTests(clear) {
+runtest('row0.pass.image', test_com_houseelectrics_serializer_test_TestToJson_demoDefaultingForUserguide, clear);
+runtest('row1.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testIndexedWithNull, clear);
+runtest('row2.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDemoIndexedPropertiesForUserguide, clear);
+runtest('row3.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDemoHashedPropertiesForUserguide, clear);
+runtest('row4.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonFields, clear);
+runtest('row5.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonProperties, clear);
+runtest('row6.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaProperties, clear);
+runtest('row7.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaFields, clear);
+runtest('row8.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonPropertiesIndexed, clear);
+runtest('row9.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testSimpleMap, clear);
+runtest('row10.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testTypedMap, clear);
+runtest('row11.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonHierarchy, clear);
+runtest('row12.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testUseReferencesSimple, clear);
+runtest('row13.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testUseReferences, clear);
+runtest('row14.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_defaultMap, clear);
+runtest('row15.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting, clear);
+runtest('row16.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_unrestoredvalues, clear);
+runtest('row17.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_resolveLeaves, clear);
+runtest('row18.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_simplealias, clear);
+runtest('row19.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_numericliaser, clear);
+}
+var clear=false;
+function showjssource(f)
+{
+    var w = window.open('','','width=400, resizable=yes, scrollbars');
+    w.document.write('<pre>' + f + '</pre>');
+    w.document.close();
+    w.focus();
+};
+    </script>
+<a href="javascript:runAllTests()">run all tests</a>
+<br>
+<a href="javascript:runAllTests(true)">clear all tests</a>
+<br>
+
+    <table border=1>
+<tr>
+<th>pass<br>fail</th><th>name</th><th>description</th><th>.net source</th><th>java script<br> test source</th></tr>
+<tr><td><img id='row0.pass.image' width='20' height='24'/><a href="javascript:runtest('row0.pass.image', test_com_houseelectrics_serializer_test_TestToJson_demoDefaultingForUserguide, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.demoDefaultingForUserguide</td><td>test defaulting - serialised without default values and restore with standard restore js function</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::demoDefaultingForUserguide</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_demoDefaultingForUserguide)">show</a></td></tr>
+<tr><td><img id='row1.pass.image' width='20' height='24'/><a href="javascript:runtest('row1.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testIndexedWithNull, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testIndexedWithNull</td><td>properties demo for userguide</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testIndexedWithNull</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testIndexedWithNull)">show</a></td></tr>
+<tr><td><img id='row2.pass.image' width='20' height='24'/><a href="javascript:runtest('row2.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDemoIndexedPropertiesForUserguide, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDemoIndexedPropertiesForUserguide</td><td>properties demo for userguide</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDemoIndexedPropertiesForUserguide</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDemoIndexedPropertiesForUserguide)">show</a></td></tr>
+<tr><td><img id='row3.pass.image' width='20' height='24'/><a href="javascript:runtest('row3.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDemoHashedPropertiesForUserguide, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDemoHashedPropertiesForUserguide</td><td>hashed properties demo for userguide</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDemoHashedPropertiesForUserguide</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDemoHashedPropertiesForUserguide)">show</a></td></tr>
+<tr><td><img id='row4.pass.image' width='20' height='24'/><a href="javascript:runtest('row4.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonFields, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonFields</td><td>try fields</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonFields</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonFields)">show</a></td></tr>
+<tr><td><img id='row5.pass.image' width='20' height='24'/><a href="javascript:runtest('row5.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonProperties, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonProperties</td><td>try properties</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonProperties</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonProperties)">show</a></td></tr>
+<tr><td><img id='row6.pass.image' width='20' height='24'/><a href="javascript:runtest('row6.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaProperties, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonLeafTypesViaProperties</td><td>try different property types</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonLeafTypesViaProperties</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaProperties)">show</a></td></tr>
+<tr><td><img id='row7.pass.image' width='20' height='24'/><a href="javascript:runtest('row7.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaFields, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonLeafTypesViaFields</td><td>try different field types</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonLeafTypesViaFields</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonLeafTypesViaFields)">show</a></td></tr>
+<tr><td><img id='row8.pass.image' width='20' height='24'/><a href="javascript:runtest('row8.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonPropertiesIndexed, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonPropertiesIndexed</td><td>try indexed properties</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonPropertiesIndexed</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonPropertiesIndexed)">show</a></td></tr>
+<tr><td><img id='row9.pass.image' width='20' height='24'/><a href="javascript:runtest('row9.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testSimpleMap, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testSimpleMap</td><td>try a simple map structure (c# dictionary)</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testSimpleMap</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testSimpleMap)">show</a></td></tr>
+<tr><td><img id='row10.pass.image' width='20' height='24'/><a href="javascript:runtest('row10.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testTypedMap, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testTypedMap</td><td>try a typed map structure (java Map)</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testTypedMap</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testTypedMap)">show</a></td></tr>
+<tr><td><img id='row11.pass.image' width='20' height='24'/><a href="javascript:runtest('row11.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testToJsonHierarchy, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testToJsonHierarchy</td><td>try hierarchical structure</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testToJsonHierarchy</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testToJsonHierarchy)">show</a></td></tr>
+<tr><td><img id='row12.pass.image' width='20' height='24'/><a href="javascript:runtest('row12.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testUseReferencesSimple, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testUseReferencesSimple</td><td>try references for Guide - repeated objects are included by reference</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testUseReferencesSimple</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testUseReferencesSimple)">show</a></td></tr>
+<tr><td><img id='row13.pass.image' width='20' height='24'/><a href="javascript:runtest('row13.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testUseReferences, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testUseReferences</td><td>try references - repeated objects are included by reference</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testUseReferences</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testUseReferences)">show</a></td></tr>
+<tr><td><img id='row14.pass.image' width='20' height='24'/><a href="javascript:runtest('row14.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_defaultMap, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaulting.defaultMap</td><td>test use of defaults -  check access to serialised defaults, class names are aliased replacing '.' with '_'</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaulting</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_defaultMap)">show</a></td></tr>
+<tr><td><img id='row15.pass.image' width='20' height='24'/><a href="javascript:runtest('row15.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaulting</td><td>test use of defaults - check access to serialised defaults, classnames are aliases with numbers</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaulting</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaulting)">show</a></td></tr>
+<tr><td><img id='row16.pass.image' width='20' height='24'/><a href="javascript:runtest('row16.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_unrestoredvalues, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaulting.unrestoredvalues</td><td>test use of defaults - serialise ommitting defaults and in js test do not restore defaults</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaulting</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_unrestoredvalues)">show</a></td></tr>
+<tr><td><img id='row17.pass.image' width='20' height='24'/><a href="javascript:runtest('row17.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_resolveLeaves, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaulting.resolveLeaves</td><td>test use of defaults - serialised without default values and restore with standard restore js function</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaulting</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaulting_resolveLeaves)">show</a></td></tr>
+<tr><td><img id='row18.pass.image' width='20' height='24'/><a href="javascript:runtest('row18.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_simplealias, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaultingWritingDefaultsBit.simplealias</td><td>check writing of defaults works - using a verbose class aliaser</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaultingWritingDefaultsBit</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_simplealias)">show</a></td></tr>
+<tr><td><img id='row19.pass.image' width='20' height='24'/><a href="javascript:runtest('row19.pass.image', test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_numericliaser, clear)">run</a></td><td>com.houseelectrics.serializer.test.TestToJson.testDefaultingWritingDefaultsBit.numericliaser</td><td>check writing of defaults works - using a compact numeric aliaser</td><td>TestToJson.javacom.houseelectrics.serializer.test.TestToJson::testDefaultingWritingDefaultsBit</td><td><a href="javascript:showjssource(test_com_houseelectrics_serializer_test_TestToJson_testDefaultingWritingDefaultsBit_numericliaser)">show</a></td></tr>
+</table>
+
+</body>
+</html>

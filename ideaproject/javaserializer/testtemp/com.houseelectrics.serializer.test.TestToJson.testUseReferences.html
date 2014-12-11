@@ -1,0 +1,390 @@
+<html>
+    <script>
+    
+function resolveRefs(o, ref2o) 
+{
+    if (!o) return;
+    if (!ref2o) ref2o = {};
+    function perSubO(o, subo, ref2o, suboKey)
+    {
+        if (subo && subo._ref_)
+        {
+            o[suboKey]=ref2o[subo._ref_];
+        }
+        else if (subo && subo._id_)
+        {
+            ref2o[subo._id_]=subo;
+            resolveRefs(subo, ref2o);
+        }
+    }
+//is array ?
+//this condition is superfluous since this sam code write the array !
+    if ((o._a_) /*|| (Array && Array.isArray && Array.isArray(o))*/)
+    {
+        for (var i =0; i<o.length; i++)
+        {
+            var subo=o[i];
+            perSubO(o, subo, ref2o, i);
+        }
+    }
+    else
+    {
+        for (var p in o)
+        {
+            var subo = o[p];
+            perSubO(o, subo, ref2o, p);
+        }
+    }
+    return o;
+}
+
+function attachId2Array(id, arr) {arr._id_=id; arr._a_='y'; return arr;}
+
+//mark array so browser specific testing is not required
+function _a_(arr) {arr._a_='y'; return arr;}
+
+var withRefRoot=resolveRefs(
+  {_id_:0 , Name:"root", Branches:
+    attachId2Array(1,[
+      {_id_:2 , Name:null, Branches:
+        attachId2Array(3,[
+          {_id_:4 , Name:"level0_index0", Branches:
+            attachId2Array(5,[
+              {_id_:6 , Name:"level1_index0", Branches:
+                attachId2Array(7,[
+                  {_id_:8 , Name:"level2_index0", Branches:
+                    attachId2Array(9,[])
+                  }
+                , 
+                  {_id_:10 , Name:"level2_index1", Branches:
+                    attachId2Array(11,[])
+                  }
+                , 
+                  {_id_:12 , Name:"level2_index2", Branches:
+                    attachId2Array(13,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:14 , Name:"level1_index1", Branches:
+                attachId2Array(15,[
+                  {_id_:16 , Name:"level2_index0", Branches:
+                    attachId2Array(17,[])
+                  }
+                , 
+                  {_id_:18 , Name:"level2_index1", Branches:
+                    attachId2Array(19,[])
+                  }
+                , 
+                  {_id_:20 , Name:"level2_index2", Branches:
+                    attachId2Array(21,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:22 , Name:"level1_index2", Branches:
+                attachId2Array(23,[
+                  {_id_:24 , Name:"level2_index0", Branches:
+                    attachId2Array(25,[])
+                  }
+                , 
+                  {_id_:26 , Name:"level2_index1", Branches:
+                    attachId2Array(27,[])
+                  }
+                , 
+                  {_id_:28 , Name:"level2_index2", Branches:
+                    attachId2Array(29,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:30 , Name:"level0_index1", Branches:
+            attachId2Array(31,[
+              {_id_:32 , Name:"level1_index0", Branches:
+                attachId2Array(33,[
+                  {_id_:34 , Name:"level2_index0", Branches:
+                    attachId2Array(35,[])
+                  }
+                , 
+                  {_id_:36 , Name:"level2_index1", Branches:
+                    attachId2Array(37,[])
+                  }
+                , 
+                  {_id_:38 , Name:"level2_index2", Branches:
+                    attachId2Array(39,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:40 , Name:"level1_index1", Branches:
+                attachId2Array(41,[
+                  {_id_:42 , Name:"level2_index0", Branches:
+                    attachId2Array(43,[])
+                  }
+                , 
+                  {_id_:44 , Name:"level2_index1", Branches:
+                    attachId2Array(45,[])
+                  }
+                , 
+                  {_id_:46 , Name:"level2_index2", Branches:
+                    attachId2Array(47,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:48 , Name:"level1_index2", Branches:
+                attachId2Array(49,[
+                  {_id_:50 , Name:"level2_index0", Branches:
+                    attachId2Array(51,[])
+                  }
+                , 
+                  {_id_:52 , Name:"level2_index1", Branches:
+                    attachId2Array(53,[])
+                  }
+                , 
+                  {_id_:54 , Name:"level2_index2", Branches:
+                    attachId2Array(55,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:56 , Name:"level0_index2", Branches:
+            attachId2Array(57,[
+              {_id_:58 , Name:"level1_index0", Branches:
+                attachId2Array(59,[
+                  {_id_:60 , Name:"level2_index0", Branches:
+                    attachId2Array(61,[])
+                  }
+                , 
+                  {_id_:62 , Name:"level2_index1", Branches:
+                    attachId2Array(63,[])
+                  }
+                , 
+                  {_id_:64 , Name:"level2_index2", Branches:
+                    attachId2Array(65,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:66 , Name:"level1_index1", Branches:
+                attachId2Array(67,[
+                  {_id_:68 , Name:"level2_index0", Branches:
+                    attachId2Array(69,[])
+                  }
+                , 
+                  {_id_:70 , Name:"level2_index1", Branches:
+                    attachId2Array(71,[])
+                  }
+                , 
+                  {_id_:72 , Name:"level2_index2", Branches:
+                    attachId2Array(73,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:74 , Name:"level1_index2", Branches:
+                attachId2Array(75,[
+                  {_id_:76 , Name:"level2_index0", Branches:
+                    attachId2Array(77,[])
+                  }
+                , 
+                  {_id_:78 , Name:"level2_index1", Branches:
+                    attachId2Array(79,[])
+                  }
+                , 
+                  {_id_:80 , Name:"level2_index2", Branches:
+                    attachId2Array(81,[])
+                  }
+                ])
+              }
+            ])
+          }
+        ])
+      }
+    , 
+      {_ref_:2}
+    , 
+      {_ref_:2}
+    ])
+  }
+);
+
+</script>
+    <body>
+<pre>
+withRefRoot=>resolveRefs(
+  {_id_:0 , Name:"root", Branches:
+    attachId2Array(1,[
+      {_id_:2 , Name:null, Branches:
+        attachId2Array(3,[
+          {_id_:4 , Name:"level0_index0", Branches:
+            attachId2Array(5,[
+              {_id_:6 , Name:"level1_index0", Branches:
+                attachId2Array(7,[
+                  {_id_:8 , Name:"level2_index0", Branches:
+                    attachId2Array(9,[])
+                  }
+                , 
+                  {_id_:10 , Name:"level2_index1", Branches:
+                    attachId2Array(11,[])
+                  }
+                , 
+                  {_id_:12 , Name:"level2_index2", Branches:
+                    attachId2Array(13,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:14 , Name:"level1_index1", Branches:
+                attachId2Array(15,[
+                  {_id_:16 , Name:"level2_index0", Branches:
+                    attachId2Array(17,[])
+                  }
+                , 
+                  {_id_:18 , Name:"level2_index1", Branches:
+                    attachId2Array(19,[])
+                  }
+                , 
+                  {_id_:20 , Name:"level2_index2", Branches:
+                    attachId2Array(21,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:22 , Name:"level1_index2", Branches:
+                attachId2Array(23,[
+                  {_id_:24 , Name:"level2_index0", Branches:
+                    attachId2Array(25,[])
+                  }
+                , 
+                  {_id_:26 , Name:"level2_index1", Branches:
+                    attachId2Array(27,[])
+                  }
+                , 
+                  {_id_:28 , Name:"level2_index2", Branches:
+                    attachId2Array(29,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:30 , Name:"level0_index1", Branches:
+            attachId2Array(31,[
+              {_id_:32 , Name:"level1_index0", Branches:
+                attachId2Array(33,[
+                  {_id_:34 , Name:"level2_index0", Branches:
+                    attachId2Array(35,[])
+                  }
+                , 
+                  {_id_:36 , Name:"level2_index1", Branches:
+                    attachId2Array(37,[])
+                  }
+                , 
+                  {_id_:38 , Name:"level2_index2", Branches:
+                    attachId2Array(39,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:40 , Name:"level1_index1", Branches:
+                attachId2Array(41,[
+                  {_id_:42 , Name:"level2_index0", Branches:
+                    attachId2Array(43,[])
+                  }
+                , 
+                  {_id_:44 , Name:"level2_index1", Branches:
+                    attachId2Array(45,[])
+                  }
+                , 
+                  {_id_:46 , Name:"level2_index2", Branches:
+                    attachId2Array(47,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:48 , Name:"level1_index2", Branches:
+                attachId2Array(49,[
+                  {_id_:50 , Name:"level2_index0", Branches:
+                    attachId2Array(51,[])
+                  }
+                , 
+                  {_id_:52 , Name:"level2_index1", Branches:
+                    attachId2Array(53,[])
+                  }
+                , 
+                  {_id_:54 , Name:"level2_index2", Branches:
+                    attachId2Array(55,[])
+                  }
+                ])
+              }
+            ])
+          }
+        , 
+          {_id_:56 , Name:"level0_index2", Branches:
+            attachId2Array(57,[
+              {_id_:58 , Name:"level1_index0", Branches:
+                attachId2Array(59,[
+                  {_id_:60 , Name:"level2_index0", Branches:
+                    attachId2Array(61,[])
+                  }
+                , 
+                  {_id_:62 , Name:"level2_index1", Branches:
+                    attachId2Array(63,[])
+                  }
+                , 
+                  {_id_:64 , Name:"level2_index2", Branches:
+                    attachId2Array(65,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:66 , Name:"level1_index1", Branches:
+                attachId2Array(67,[
+                  {_id_:68 , Name:"level2_index0", Branches:
+                    attachId2Array(69,[])
+                  }
+                , 
+                  {_id_:70 , Name:"level2_index1", Branches:
+                    attachId2Array(71,[])
+                  }
+                , 
+                  {_id_:72 , Name:"level2_index2", Branches:
+                    attachId2Array(73,[])
+                  }
+                ])
+              }
+            , 
+              {_id_:74 , Name:"level1_index2", Branches:
+                attachId2Array(75,[
+                  {_id_:76 , Name:"level2_index0", Branches:
+                    attachId2Array(77,[])
+                  }
+                , 
+                  {_id_:78 , Name:"level2_index1", Branches:
+                    attachId2Array(79,[])
+                  }
+                , 
+                  {_id_:80 , Name:"level2_index2", Branches:
+                    attachId2Array(81,[])
+                  }
+                ])
+              }
+            ])
+          }
+        ])
+      }
+    , 
+      {_ref_:2}
+    , 
+      {_ref_:2}
+    ])
+  }
+)
+withRefRoot.Branches[2].Branches[1].Name==<script>document.write(withRefRoot.Branches[2].Branches[1].Name)</script>
+
+</pre>

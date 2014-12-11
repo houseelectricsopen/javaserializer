@@ -1,0 +1,50 @@
+<html>
+    <script>
+    
+function resolveRefs(o, ref2o) 
+{
+    if (!o) return;
+    if (!ref2o) ref2o = {};
+    function perSubO(o, subo, ref2o, suboKey)
+    {
+        if (subo && subo._ref_)
+        {
+            o[suboKey]=ref2o[subo._ref_];
+        }
+        else if (subo && subo._id_)
+        {
+            ref2o[subo._id_]=subo;
+            resolveRefs(subo, ref2o);
+        }
+    }
+//is array ?
+//this condition is superfluous since this sam code write the array !
+    if ((o._a_) /*|| (Array && Array.isArray && Array.isArray(o))*/)
+    {
+        for (var i =0; i<o.length; i++)
+        {
+            var subo=o[i];
+            perSubO(o, subo, ref2o, i);
+        }
+    }
+    else
+    {
+        for (var p in o)
+        {
+            var subo = o[p];
+            perSubO(o, subo, ref2o, p);
+        }
+    }
+    return o;
+}
+
+var root=resolveRefs({_id_:0 , subo1:{_id_:1 , stringVal:"123456", intVal:4321}, subo2:{_ref_:1}, subo3:{_ref_:1}});
+
+</script>
+    <body>
+<pre>
+root=>resolveRefs({_id_:0 , subo1:{_id_:1 , stringVal:"123456", intVal:4321}, subo2:{_ref_:1}, subo3:{_ref_:1}})
+root.subo3.stringVal==<script>document.write(root.subo3.stringVal)</script>
+root.subo3.intVal==<script>document.write(root.subo3.intVal)</script>
+
+</pre>
