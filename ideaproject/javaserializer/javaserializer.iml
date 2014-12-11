@@ -10,6 +10,7 @@
     <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit-4.11" level="project" />
+    <orderEntry type="library" name="easymock-3.3-sources" level="project" />
     <orderEntry type="library" name="easymock-3.3" level="project" />
   </component>
 </module>
