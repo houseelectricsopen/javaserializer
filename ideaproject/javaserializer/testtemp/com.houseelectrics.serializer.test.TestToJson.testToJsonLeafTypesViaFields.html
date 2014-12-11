@@ -2,16 +2,17 @@
     <script>
     
 var testdata=
-  {aLong:23, aLongRef:789, aInt:463, aIntRef:247, aShort:124, aChar:"c", aString:null, aString2:"hi"}
+  {aLong:23, aLongRef:789, aInt:463, aIntRef:247, aShort:124, aChar:"c", aString:null, aString2:"hi", aByte:126}
 ;
 
 </script>
     <body>
 <pre>
 testdata=>
-  {aLong:23, aLongRef:789, aInt:463, aIntRef:247, aShort:124, aChar:"c", aString:null, aString2:"hi"}
+  {aLong:23, aLongRef:789, aInt:463, aIntRef:247, aShort:124, aChar:"c", aString:null, aString2:"hi", aByte:126}
 
 testdata.aString2==<script>document.write(testdata.aString2)</script>
+testdata.aByte==<script>document.write(testdata.aByte)</script>
 testdata.aShort==<script>document.write(testdata.aShort)</script>
 testdata.aLongRef==<script>document.write(testdata.aLongRef)</script>
 testdata.aInt==<script>document.write(testdata.aInt)</script>
