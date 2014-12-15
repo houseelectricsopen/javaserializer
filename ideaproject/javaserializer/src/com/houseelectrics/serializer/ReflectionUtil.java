@@ -115,7 +115,56 @@ public class ReflectionUtil
     }
 
 
+    public static Object valueForKeyPathWithIndexes(Object source, String path, boolean returnNull4OutOfRangeIndex, boolean throwExceptionOnError)
 
+    {
+        String[] elements = path.split("\\.");
+        Object context = source;
+        for (int done=0; done < elements.length; done++)
+        {
+            String element = elements[done].trim();
+            Integer index = null;
+            if (element.contains("["))
+            {
+                int indexBracketIndex = element.indexOf('[');
+                String strIndex = element.substring(indexBracketIndex+1, element.length()-1);
+                index = Integer.parseInt(strIndex);
+                element = element.substring(0, indexBracketIndex);
+            }
+            element = element.substring(0,1).toUpperCase() + element.substring(1);
+            Object parent = context;
+            if (element.equals("Count") && context instanceof List)
+            {
+                context = ((List)context).size();
+            }
+            else
+            {
+                context = ReflectionUtil.getPropertyValueReturnExceptions(context, element);
+                if (index!=null)
+                {
+                    List lcontext = (List)context;
+                    if ((lcontext== null && returnNull4OutOfRangeIndex)  || index>=lcontext.size()) context = null;
+                    else context = lcontext.get(index);
+                }
+            }
+            if (context instanceof Throwable)
+            {
+                if (throwExceptionOnError)
+                {
+                    String message = "failed to extract " + parent.getClass().getName() + "." + element;
+                    RuntimeException rex = new RuntimeException(message, (Exception) context);
+                    throw rex;
+                }
+                else
+                {
+                    context = null;
+                }
+            }
+            if (context==null) break;
+        }
+
+        return context;
+    }
 
 
 }
