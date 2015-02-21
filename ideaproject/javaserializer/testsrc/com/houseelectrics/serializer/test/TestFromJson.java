@@ -144,6 +144,23 @@ public class TestFromJson extends EasyMockSupport
         Assert.assertEquals("IntPropertyD value", intPropertyValue, result.getIntPropertyD() );
     }
 
+    @Test
+    public void testPropertiesWithSpace()
+    {
+        SimpleTestObject result;
+        Json2Object j2O = new Json2Object();
+        //j2O.setToUseProperties();
+        Class type = SimpleTestObject.class;
+        String stringPropertyBvalue = "abcd123";
+        int intPropertyValue = 98765;
+        String json = "{" + j2O.getTypeSpecifier() + " : " + type.getName() + " \"StringPropertyB\" : " + stringPropertyBvalue + " \"IntPropertyD\" : " + intPropertyValue +" }";
+        System.out.println("TestSimpleObjectHintAsAttribute json:" + json);
+        result = (SimpleTestObject)j2O.toObject(json);
+        Assert.assertEquals("propertyB value", stringPropertyBvalue, result.getStringPropertyB() );
+        Assert.assertEquals("IntPropertyD value", intPropertyValue, result.getIntPropertyD() );
+    }
+
+
 
     @Test
     @TestDescription(description = "try different Property types")
@@ -624,6 +641,46 @@ public class TestFromJson extends EasyMockSupport
             Assert.assertEquals("checking index " + done, expectedValue, actualValue);
         }
     }
+
+
+    // part of google geocode api
+    public static class TestGeocodeResultSet
+    {
+        public static class Item
+        {
+            public static class AddressComponents {
+                private String long_name;
+                public String getLong_name() {return long_name;}
+                public void setLong_name(String value) {}
+            }
+            private List<AddressComponents> address_components=new ArrayList<AddressComponents>();
+            public List<AddressComponents> getAddress_components() {return address_components;}
+            public void setAddress_components(List<AddressComponents> value) {this.address_components=value;}
+        }
+
+        private List<Item> results = new ArrayList<Item>();
+        public List<Item> getResults()  { return results;  }
+        public void setResults(List<Item> value) {this.results=value;}
+    }
+
+    @Test
+    public void testEmbeddedLists()
+    {
+        TestGeocodeResultSet result;
+        Json2Object j2O = new Json2Object();
+        j2O.setPropertiesAcceptLowerCasePropertyNames(true);
+
+        //j2O.setToUseProperties();
+        Class type = TestGeocodeResultSet.class;
+        String json = "{   \"results\" : [   {     \"address_components\" : [            {     \"long_name\" : \"SW1A 2AA\"}  ]   } ] } ";
+
+        System.out.println("testEmbeddedLists json:" + json);
+        result = (TestGeocodeResultSet) j2O.toObject(json, type);
+        //Assert.assertEquals("propertyB value", stringPropertyBvalue, result.getStringPropertyB() );
+       // Assert.assertEquals("IntPropertyD value", intPropertyValue, result.getIntPropertyD() );
+    }
+
+
 
 
     @Test
