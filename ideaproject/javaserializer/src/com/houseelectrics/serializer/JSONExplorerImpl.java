@@ -280,16 +280,30 @@ public class JSONExplorerImpl
                 };
             };
 
-            Integer propertyNameEnd = StringUtils.firstCharPosition(json, matcher, pos, to);
-            if (null == propertyNameEnd)
+            Integer colonIndex = StringUtils.firstCharPosition(json, matcher, pos, to);
+
+            if (null == colonIndex)
             {
                 throw new RuntimeException("no end found to property name at char "+ pos + " property starts with " + json.substring(pos) + " in json " +   json.substring(from));
             }
-            currentPropertyName = json.substring(pos, propertyNameEnd.intValue() /*- pos*/);
+
+            StringUtils.CharPredicate nonWhitespaceOrColon =
+                    new StringUtils.CharPredicate()
+                    {
+                        @Override
+                        public boolean match(char c)
+                        {
+                            return !Character.isWhitespace(c) && c!=':';
+                        }
+                    };
+
+            int propertyNameEnd = StringUtils.lastCharPosition(json, nonWhitespaceOrColon, colonIndex, 0);
+            // propertyNameEnd
+            currentPropertyName = json.substring(pos, propertyNameEnd+1 /*- pos*/);
             if (currentPropertyName.charAt(0) == '"') currentPropertyName = currentPropertyName.substring(1);
             if (currentPropertyName.endsWith("\"")) currentPropertyName = currentPropertyName.substring(0, currentPropertyName.length() - 1);
 
-            pos = propertyNameEnd.intValue() + 1;
+            pos = colonIndex + 1;
             Integer valueStartPos = firstNonWhiteSpaceCharacterIndex(json, pos, to);
             if (valueStartPos == null)
             {
