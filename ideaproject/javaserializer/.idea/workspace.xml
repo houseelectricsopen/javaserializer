@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="javaserializer:jar" />
+      <artifact name="javaserializer_src" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f117d94e-98cf-4ec2-bbc9-667e49e557f4" name="Default" comment="" />
     <ignored path="javaserializer.iws" />
@@ -23,95 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestFromJson.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestFromJson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="11713">
-              <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userguide.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/docs/userguide.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="10268">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SecurityTest.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/security/SecurityTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36431226" vertical-offset="4" max-vertical-offset="7004">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding>
-                <element signature="e#1962#1978#0" expanded="true" />
-                <element signature="e#3909#3917#0" expanded="true" />
-                <element signature="e#5596#5604#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NodeExpanderConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/NodeExpanderConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="289">
-              <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AllPrimitiveLeafTypes.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/AllPrimitiveLeafTypes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="2125">
-              <caret line="48" column="102" selection-start-line="48" selection-start-column="102" selection-end-line="48" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestData.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="748">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Object2Json.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6205" max-vertical-offset="7650">
-              <caret line="365" column="49" selection-start-line="365" selection-start-column="49" selection-end-line="365" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Json2Object.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10642" max-vertical-offset="12376">
-              <caret line="626" column="42" selection-start-line="626" selection-start-column="42" selection-end-line="626" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="13170">
+              <caret line="230" column="6" selection-start-line="230" selection-start-column="6" selection-end-line="230" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypeConverter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java">
+      <file leaf-file-name="JsonExploreListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/JsonExploreListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="3281">
-              <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="345">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONExplorerImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/JSONExplorerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="5025">
+              <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/StringUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1005">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -120,8 +72,58 @@
       <file leaf-file-name="ReflectionUtil.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="2159">
-              <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6675" max-vertical-offset="7575">
+              <caret line="445" column="9" selection-start-line="445" selection-start-column="9" selection-end-line="445" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypeConverter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2760" max-vertical-offset="2895">
+              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeocodeUtil.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/googlegeocode/GeocodeUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.63192904" vertical-offset="525" max-vertical-offset="4725">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeocodeUtilTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/googlegeocode/GeocodeUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1020">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectionUtilTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="3645">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NativeMethodAccessorImpl.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="360">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -137,10 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/JsonExplorerListener.java" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/JSONExplorerImpl.cs" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/StringUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/JSONExplorerImpl.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/LeafDefaultSet/java.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeAntiAliaser.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeAliaser.java" />
@@ -167,12 +165,10 @@
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/ObjectExplorerImpl.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestToJson.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/CreateCompatibilityPage.java" />
-        <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.cs" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestFromJson.cs" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/path/PathTest.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/PropertyReflectionNodeExpander.java" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/path/PathUtil.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/security/PermissionRequirementAttribute.cs" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/security/PermissionRequirement.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/security/PermissionFilterExplorer.java" />
@@ -180,22 +176,28 @@
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/JsonExplorationTest.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/security/SecurityTest.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/datacontract/DataContractSupportTest.java" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/AllPrimitiveLeafTypes.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/NodeExpanderConstants.java" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/docs/userguide.html" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/path/PathUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/JSONExplorerImpl.java" />
         <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestFromJson.java" />
         <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java" />
-        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/docs/userguide.html" />
+        <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/googlegeocode/GeocodeUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java" />
+        <option value="$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/com/houseelectrics/serializer/googlegeocode/GeocodeUtil.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="87" />
-    <option name="y" value="27" />
-    <option name="width" value="1068" />
-    <option name="height" value="629" />
+    <option name="x" value="154" />
+    <option name="y" value="115" />
+    <option name="width" value="1565" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -223,6 +225,48 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Tests">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="javaserializer">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.houseelectrics.serializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -242,7 +286,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javaserializer" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -252,34 +296,55 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javaserializer" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="testsrc" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="javaserializer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javaserializer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testsrc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="googlegeocode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaserializer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,25 +354,78 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../androidprojects/pdftemplate" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.houseelectrics.serializer" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestFromJson.testDateFromString">
-    <configuration default="false" name="TestFromJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.com.houseelectrics.serializer.test in javaserializer">
+    <configuration default="false" name="GeocodeUtilTest.postcodeLookupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="javaserializer" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test.googlegeocode" />
+      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.googlegeocode.GeocodeUtilTest" />
+      <option name="METHOD_NAME" value="postcodeLookupTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="com.houseelectrics.serializer.test in javaserializer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javaserializer" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test" />
-      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.TestFromJson" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="GeocodeUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="javaserializer" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test.googlegeocode" />
+      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.googlegeocode.GeocodeUtilTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -325,16 +443,18 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TestFromJson.testTypeInferenceArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ReflectionUtilTest.testMapCompare" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javaserializer" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test" />
-      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.TestFromJson" />
-      <option name="METHOD_NAME" value="testTypeInferenceArray" />
+      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.ReflectionUtilTest" />
+      <option name="METHOD_NAME" value="testMapCompare" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -346,22 +466,18 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TestFromJson.testToJsonLeafTypesViaFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ReflectionUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="javaserializer" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test" />
-      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.TestFromJson" />
-      <option name="METHOD_NAME" value="testToJsonLeafTypesViaFields" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.ReflectionUtilTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -372,64 +488,8 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestFromJson.testBooleanPrimitiveFromString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="javaserializer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test" />
-      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.TestFromJson" />
-      <option name="METHOD_NAME" value="testBooleanPrimitiveFromString" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestFromJson.testDateFromString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="javaserializer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.houseelectrics.serializer.test" />
-      <option name="MAIN_CLASS_NAME" value="com.houseelectrics.serializer.test.TestFromJson" />
-      <option name="METHOD_NAME" value="testDateFromString" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -562,19 +622,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestFromJson" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestFromJson.testTypeInferenceArray" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestFromJson.testToJsonLeafTypesViaFields" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.TestFromJson.testBooleanPrimitiveFromString" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestFromJson.testDateFromString" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.GeocodeUtilTest.postcodeLookupTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.com.houseelectrics.serializer.test in javaserializer" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GeocodeUtilTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ReflectionUtilTest.testMapCompare" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ReflectionUtilTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestFromJson.testDateFromString" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestFromJson.testBooleanPrimitiveFromString" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestFromJson.testToJsonLeafTypesViaFields" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestFromJson" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestFromJson.testTypeInferenceArray" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.com.houseelectrics.serializer.test in javaserializer" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GeocodeUtilTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ReflectionUtilTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ReflectionUtilTest.testMapCompare" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GeocodeUtilTest.postcodeLookupTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -583,6 +643,18 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StatisticProjectComponent">
+    <option name="excludeCompilerOutput" value="true" />
+    <option name="excludeIdea9ArtifactDirectory" value="true" />
+    <option name="excludeTargetDirectories" value="true" />
+    <option name="activateWhenOpenProject" value="true" />
+    <option name="excludedDirectories">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+    <option name="fileTypes" value="class;svn-base;svn-work;Extra;gif;png;jpg;jpeg;bmp;tga;tiff;ear;war;zip;jar;iml;iws;ipr;bz2;gz;" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -595,30 +667,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="87" y="27" width="1068" height="629" extended-state="0" />
+    <frame x="154" y="115" width="1565" height="830" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58457714" sideWeight="0.8430729" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3873874" sideWeight="0.8341498" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268714" sideWeight="0.50570345" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.621098" sideWeight="0.8325673" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.302168" sideWeight="0.1661195" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.268714" sideWeight="0.49429658" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24950755" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3269962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4279476" sideWeight="0.83513683" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25476035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.302168" sideWeight="0.8338805" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4181818" sideWeight="0.49689922" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41915423" sideWeight="0.4963887" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3604336" sideWeight="0.4924491" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -649,28 +722,16 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
-          <line>272</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java</url>
-          <line>24</line>
+          <line>26</line>
           <properties />
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
-          <line>127</line>
+          <line>138</line>
           <properties />
           <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
-          <line>603</line>
-          <properties />
-          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/security/PermissionFilterExplorer.java</url>
@@ -679,13 +740,79 @@
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
-          <line>397</line>
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java</url>
+          <line>228</line>
           <properties />
-          <option name="timeStamp" value="152" />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java</url>
+          <line>213</line>
+          <properties />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/googlegeocode/GeocodeUtil.java</url>
+          <line>146</line>
+          <properties />
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java</url>
+          <line>184</line>
+          <properties />
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
+          <line>635</line>
+          <properties />
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
+          <line>466</line>
+          <properties />
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java</url>
+          <line>206</line>
+          <properties />
+          <option name="timeStamp" value="216" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/googlegeocode/GeocodeUtilTest.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="224" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="154" />
+      <option name="time" value="226" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -693,60 +820,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="748">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6205" max-vertical-offset="7650">
-          <caret line="365" column="49" selection-start-line="365" selection-start-column="49" selection-end-line="365" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10642" max-vertical-offset="12376">
-          <caret line="626" column="42" selection-start-line="626" selection-start-column="42" selection-end-line="626" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2261" max-vertical-offset="3281">
-          <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="2159">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/MainTest.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1800">
-          <caret line="96" column="27" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/JSExecuteUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0384617" vertical-offset="30" max-vertical-offset="5445">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestToJson.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6742" max-vertical-offset="8400">
@@ -789,16 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6316964" vertical-offset="122" max-vertical-offset="570">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.9030023" vertical-offset="1151" max-vertical-offset="5925">
@@ -817,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
           <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/path/PathUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1427" max-vertical-offset="1920">
-          <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/path/PathTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1095">
@@ -864,18 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/PropertyReflectionNodeExpander.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="915">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestDescription.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3716216" vertical-offset="0" max-vertical-offset="444">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,9 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,7 +973,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1228" max-vertical-offset="2355">
           <caret line="98" column="68" selection-start-line="98" selection-start-column="68" selection-end-line="98" selection-end-column="68" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1736" max-vertical-offset="3525">
           <caret line="135" column="41" selection-start-line="135" selection-start-column="36" selection-end-line="135" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +1010,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="540">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -982,7 +1024,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5667" max-vertical-offset="9420">
           <caret line="394" column="16" selection-start-line="394" selection-start-column="16" selection-end-line="394" selection-end-column="16" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="645">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/AllPrimitiveLeafTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1335">
+          <caret line="48" column="102" selection-start-line="48" selection-start-column="102" selection-end-line="48" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6205" max-vertical-offset="7650">
+          <caret line="365" column="49" selection-start-line="365" selection-start-column="49" selection-end-line="365" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/path/PathUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29783395" vertical-offset="0" max-vertical-offset="1770">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/docs/userguide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10268">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/security/SecurityTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6180">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/NodeExpanderConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/PropertyReflectionNodeExpander.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="915">
+          <caret line="50" column="9" selection-start-line="14" selection-start-column="7" selection-end-line="50" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -993,95 +1104,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestFromJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9626" max-vertical-offset="11190">
+          <caret line="660" column="59" selection-start-line="660" selection-start-column="59" selection-end-line="660" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="13170">
+          <caret line="230" column="6" selection-start-line="230" selection-start-column="6" selection-end-line="230" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/JsonExploreListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/JSONExplorerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2755" max-vertical-offset="4080">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="5025">
           <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestData.java">
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="645">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="531" max-vertical-offset="1005">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/ReflectionUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="1830">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/AllPrimitiveLeafTypes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1335">
-          <caret line="48" column="102" selection-start-line="48" selection-start-column="102" selection-end-line="48" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Object2Json.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6205" max-vertical-offset="7650">
-          <caret line="365" column="49" selection-start-line="365" selection-start-column="49" selection-end-line="365" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6710" max-vertical-offset="7395">
+          <caret line="445" column="9" selection-start-line="445" selection-start-column="9" selection-end-line="445" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/TypeConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="2160">
-          <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1626" max-vertical-offset="2100">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/NodeExpanderConstants.java">
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/googlegeocode/GeocodeUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="7" column="85" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="825">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/Json2Object.java">
+    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/ReflectionUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="10642" max-vertical-offset="12376">
-          <caret line="626" column="42" selection-start-line="626" selection-start-column="42" selection-end-line="626" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="3480">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/TestFromJson.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6120" max-vertical-offset="11713">
-          <caret line="360" column="5" selection-start-line="360" selection-start-column="5" selection-end-line="360" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="345">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/docs/userguide.html">
+    <entry file="file://$PROJECT_DIR$/src/com/houseelectrics/serializer/googlegeocode/GeocodeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10268">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.63192904" vertical-offset="525" max-vertical-offset="4725">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testsrc/com/houseelectrics/serializer/test/security/SecurityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36431226" vertical-offset="4" max-vertical-offset="7004">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#1962#1978#0" expanded="true" />
-            <element signature="e#3909#3917#0" expanded="true" />
-            <element signature="e#5596#5604#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,7 +1222,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>droidText.0.2</last-edited>
+          <last-edited>droidText.0.2_min</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1128,7 +1234,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.6</last-edited>
+          <last-edited>Android API 3 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1145,6 +1251,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
