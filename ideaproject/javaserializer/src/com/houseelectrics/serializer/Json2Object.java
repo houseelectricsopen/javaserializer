@@ -33,6 +33,14 @@ public class Json2Object implements JsonExploreListener
         public Object execute(List<Object> args);
     }
 
+    protected String translatePropertyName(String propertyName)
+    {
+        if (this.propertiesAcceptLowerCasePropertyNames && propertyName!=null)
+             propertyName = Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
+        return propertyName;
+    }
+
+
     public Json2Object()
     {
 
@@ -110,18 +118,21 @@ public class Json2Object implements JsonExploreListener
     //Func<object, String, object, DeserializationListener, String> setValueinObject = setValueinObjectAsMember;
     ValueSetter setValueinObject = setValueinObjectAsMember;
 
-    /*   public void setToUseFields()
-       {
-           //setValueinObject = setValueinObjectAsField;
-           setValueinObject = setValueinObjectAsMember;
-       }
+    private boolean propertiesAcceptLowerCasePropertyNames = false;
 
-       public void setToUseProperties()
-       {
-           //setValueinObject = setValueinObjectAsProperty;
-           setValueinObject = setValueinObjectAsMember;
-       }
-       */
+    public boolean getPropertiesAcceptLowerCasePropertyNames()
+    {
+        return this.propertiesAcceptLowerCasePropertyNames;
+    }
+    public void setPropertiesAcceptLowerCasePropertyNames(boolean value)
+    {
+        this.propertiesAcceptLowerCasePropertyNames=value;
+        if (value)
+        {
+            setValueinObject=setValueInObjectAsProperty;
+        }
+    }
+
     static boolean setValueAsMap(Object target, String propertyName, Object propertyValue)
     {
         if (!Map.class.isAssignableFrom(target.getClass())) return false;
@@ -130,6 +141,16 @@ public class Json2Object implements JsonExploreListener
         dict.put(key, propertyValue);
         return true;
     }
+
+    static ValueSetter setValueInObjectAsProperty = new ValueSetter()
+    {
+        @Override
+        public String setValueinObject(Object target, String propertyName, Object value, DeserializationListener deserializationListener)
+        {
+            propertyName=Character.toUpperCase(propertyName.charAt(0)) + propertyName.substring(1);
+            return setValueinObjectAsMember.setValueinObject(target, propertyName, value, deserializationListener);
+        }
+    };
 
     static ValueSetter setValueinObjectAsMember
             = new ValueSetter()
@@ -183,7 +204,7 @@ public class Json2Object implements JsonExploreListener
             }
             catch (NoSuchFieldException nex)
             {
-                throw new RuntimeException("failed to find field " + propertyName + " in " + target.getClass().getName(), nex);
+                throw new RuntimeException("failed to find field '" + propertyName + "' in " + target.getClass().getName(), nex);
             }
             if (field != null)
             {
@@ -302,6 +323,8 @@ public class Json2Object implements JsonExploreListener
         // if the typeHint is not null create theobject
         // otherwise defer until a class attribute property is available
 
+        propertyName = translatePropertyName(propertyName);
+
         ObjectFrame objectHolder = new ObjectFrame();
         objectHolder.propertyName = propertyName;
         objects.push(objectHolder);
@@ -328,7 +351,30 @@ public class Json2Object implements JsonExploreListener
                 return;
             }
             Object parentObject = ((ObjectFrame) parentFrame).theObject;
-            Class parentClass = parentObject.getClass();
+            //TODO add this fix to c#
+            if (parentObject==null)
+            {
+                // it may be null because its a list item and this is the first property
+                // find the parents parent
+                if (this.objects.size()>2)
+                {
+                    StackFrame st = this.objects.get(this.objects.size()-3);
+                    if (st instanceof ArrayFrame)
+                         {
+                             ArrayFrame af = (ArrayFrame) st;
+                             if (af.genericClasses!=null && af.genericClasses.size()==1)
+                             {
+                                 parentObject = newInstance(af.genericClasses.get(0));
+                                 ((ObjectFrame) parentFrame).theObject = parentObject;
+                             }
+                         }
+                }
+
+             }
+        if (parentObject==null) throw new RuntimeException("parent for '" + propertyName + "' unknown");
+
+
+        Class parentClass = parentObject.getClass();
             objectHolder.genericClasses = new ArrayList<Class>();
 
             Type[] genericTypes = ReflectionUtil.getParameterizedTypesForField(parentClass, propertyName);
@@ -346,14 +392,109 @@ public class Json2Object implements JsonExploreListener
 
     protected Class inferCurrentPropertyType(ObjectFrame parentFrame, ObjectFrame currentFrame)
     {
-        Method m = null;
-        Class theClass = ReflectionUtil.getPropertyOrReflectionType(parentFrame.theObject.getClass(), currentFrame.propertyName);
-        return theClass;
+        Object theParentObject = parentFrame.theObject;
+        if (theParentObject==null)
+           {
+               return null;
+           }
+        try
+        {
+            Class theClass = ReflectionUtil.getPropertyOrReflectionType(theParentObject.getClass(), currentFrame.propertyName);
+            return theClass;
+        }
+        catch (Exception ex)
+        {
+            throw new RuntimeException("failed to inferCurrentPropertyType of " + theParentObject.getClass().getName() + " " + currentFrame.propertyName  );
+        }
+    }
+
+    protected void inferParentStackTypes(Stack<StackFrame> stack)
+    {
+        // go up the stack until some types are determined
+        boolean typeFound = false;
+        int index=stack.size()-1;
+        StackFrame parentFrame = null;
+        for (; index>=0 && !typeFound ; index--)
+        {
+            parentFrame = stack.get(index);
+            if (parentFrame instanceof ArrayFrame)
+            {
+                ArrayFrame arrayFrame = (ArrayFrame) parentFrame;
+                if (arrayFrame.genericClasses!=null && arrayFrame.genericClasses.size()>0) typeFound =true;
+            }
+            else
+            {
+                ObjectFrame objectFrame = (ObjectFrame) parentFrame;
+                if (objectFrame.theObject!=null) typeFound = true;
+            }
+        }
+        index++;
+        StackFrame stackFrame=null;
+        Class newType=null;
+        for (index++;index<(stack.size()-1); parentFrame=stackFrame, index++)
+        {
+            stackFrame = stack.get(index);
+
+            if (parentFrame instanceof ArrayFrame)
+            {
+                ArrayFrame arrayParentFrame = (ArrayFrame) stackFrame;
+                // we know generic types
+                newType = arrayParentFrame.genericClasses.get(0);
+                if (stackFrame instanceof ObjectFrame)
+                {
+                    ObjectFrame objectFrame = (ObjectFrame) stackFrame;
+                    objectFrame.theObject = newInstance(newType);
+                    arrayParentFrame.objectList.add(objectFrame.theObject);
+                }
+                else
+                {
+                    // look up generic types
+                    throw new RuntimeException("cant resolve generic types of array of array or list of list " + arrayParentFrame.propertyName );
+                }
+
+            }
+            else
+            {
+                ObjectFrame objectParentFrame = (ObjectFrame) parentFrame;
+                //get the property type
+                if (stackFrame instanceof ObjectFrame)
+                {
+                    ObjectFrame objectFrame = (ObjectFrame) stackFrame;
+                    //String propertyName = objectFrame.propertyName;
+                    newType = ReflectionUtil.getPropertyOrReflectionType(objectParentFrame.theObject.getClass(), objectFrame.propertyName);
+                    if (newType==null)
+                    {
+                        throw new RuntimeException("no type found for property " + objectParentFrame.theObject.getClass().getName() + "." + objectFrame.propertyName);
+                    }
+                    objectFrame.theObject = newInstance(newType);
+                    // to do get the serialization listener
+                    setValueinObject.setValueinObject(objectParentFrame.theObject, ((ObjectFrame) stackFrame).propertyName, objectFrame.theObject, null);
+                }
+                else
+                {
+                    ArrayFrame arrayFrame = (ArrayFrame) stackFrame;
+                    // look up generic types
+                    Type pTypes[] = ReflectionUtil.getParameterizedTypesForProperty(objectParentFrame.theObject.getClass(), stackFrame.propertyName);
+                    if (pTypes==null || pTypes.length==0)
+                    {
+                        throw new RuntimeException("cant find parameterized types for "+  objectParentFrame.theObject.getClass().getName() + "." + stackFrame.propertyName);
+                    }
+                    for (int done=0; done<pTypes.length; done++)
+                    {
+                        arrayFrame.genericClasses.add((Class)pTypes[done]);
+                    }
+                }
+
+            }
+
+        }
     }
 
 
     public void JsonLeaf(String propertyName, String value, boolean isQuoted)
     {
+        propertyName = translatePropertyName(propertyName);
+
         boolean leafPending = true;
         if (objectTypePending)
         {
@@ -383,12 +524,17 @@ public class Json2Object implements JsonExploreListener
             }
             if (attributeTypeHint==null && objects.size()>1 )
             {
+                inferParentStackTypes(this.objects);
                 StackFrame parentFrame = objects.get(objects.size()-2);
                 StackFrame currentFrame = objects.get(objects.size()-1);
                 if (parentFrame instanceof ObjectFrame && currentFrame instanceof ObjectFrame)
-                    attributeTypeHint = inferCurrentPropertyType((ObjectFrame)parentFrame, (ObjectFrame) currentFrame);
-            }
+                        attributeTypeHint = inferCurrentPropertyType((ObjectFrame) parentFrame, (ObjectFrame) currentFrame);
+           }
 
+            /*if (attributeTypeHint==null)
+            {
+                attributeTypeHint = inferCurrentPropertyTypeFromStack(this.objects);
+            }*/
 
             if (attributeTypeHint==null)
             {
@@ -458,6 +604,8 @@ public class Json2Object implements JsonExploreListener
 
     public void JsonStartFunction(String functionName, int pos, String propertyName)
     {
+        propertyName = translatePropertyName(propertyName);
+
         FunctionHolder holder = new FunctionHolder();
         holder.paramList = new ArrayList<Object>();
         holder.functionName = functionName;
@@ -488,6 +636,8 @@ public class Json2Object implements JsonExploreListener
 
     public void JsonStartArray(String propertyName, int pos)
     {
+        propertyName = translatePropertyName(propertyName);
+
         ArrayFrame holder = new ArrayFrame();
         holder.objectList = new ArrayList<Object>();
         holder.propertyName = propertyName;
@@ -563,12 +713,12 @@ abstract class StackFrame
     public abstract void submitObjectToStack(String propertyName, Object value, ValueSetter valueSetter, Json2Object.DeserializationListener listener);
     public abstract void submitLeafToStack(String propertyName, String value, ValueSetter valueSetter, Json2Object.DeserializationListener listener);
     public List<Class> genericClasses = new ArrayList<Class>();
-
+    public String propertyName;
 }
 
 class ObjectFrame extends StackFrame
         {
-public String propertyName;
+//public String propertyName;
 public Object theObject;
 TypeConverter typeConverter = new TypeConverter();
 
@@ -637,7 +787,7 @@ public  void submitLeafToStack(String propertyName, String value, ValueSetter va
 class ArrayFrame extends StackFrame
         {
 public ArrayList<Object> objectList;
-public String propertyName;
+//public String propertyName;
 TypeConverter typeConverter = new TypeConverter();
 
 @Override
@@ -665,7 +815,7 @@ class FunctionHolder extends StackFrame
         {
 public ArrayList<Object> paramList;
 public String functionName;
-public String propertyName;
+//public String propertyName;
 
 @Override
 public  void submitObjectToStack(String propertyName, Object value, ValueSetter valueSetter, Json2Object.DeserializationListener listener)
