@@ -3,12 +3,12 @@
     
 var _typeAlias2LeafDefaults_ = 
   {_id_:0 ,_t_:'_2', _0:
-    {_id_:1 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
-      {_id_:2 ,_t_:'_2', str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
+    {_id_:1 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
+      {_id_:2 ,_t_:'_2', i4:432102345, i2:23456789, i1:123456789}
     }
   , _1:
-    {_id_:3 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData", propertyName2DefaultValue:
-      {_id_:4 ,_t_:'_2', i4:432102345, i2:23456789, i1:123456789}
+    {_id_:3 ,_t_:'_3', fullClassName:"com.houseelectrics.serializer.test.TestToJson$ManyDefaultsTestData$StringValues", propertyName2DefaultValue:
+      {_id_:4 ,_t_:'_2', str2:"bcdefghijklmno", str1:"abcdefghijk", str3:null, aReallyReallyReallyLongName:"John Malcom Eldritch Ebeneezer Ozwald Smith"}
     }
   }
 ;
@@ -55,15 +55,15 @@ function _a_(arr) {arr._a_='y'; return arr;}
 function attachId2Array(id, arr) {arr._id_=id; arr._a_='y'; return arr;}
 
 var defaulted=_resolveLeafDefaults(
-  {_id_:0 ,_t_:'_1', i2:6789, stringValues:
-    {_id_:1 ,_t_:'_0'}
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
   , stringValuesArr:
     attachId2Array(2,[
-      {_id_:3 ,_t_:'_0'}
+      {_id_:3 ,_t_:'_1'}
     , 
-      {_id_:4 ,_t_:'_0'}
+      {_id_:4 ,_t_:'_1'}
     , 
-      {_id_:5 ,_t_:'_0'}
+      {_id_:5 ,_t_:'_1'}
     ])
   }
 );
@@ -72,15 +72,15 @@ var defaulted=_resolveLeafDefaults(
     <body>
 <pre>
 defaulted=>_resolveLeafDefaults(
-  {_id_:0 ,_t_:'_1', i2:6789, stringValues:
-    {_id_:1 ,_t_:'_0'}
+  {_id_:0 ,_t_:'_0', i2:6789, stringValues:
+    {_id_:1 ,_t_:'_1'}
   , stringValuesArr:
     attachId2Array(2,[
-      {_id_:3 ,_t_:'_0'}
+      {_id_:3 ,_t_:'_1'}
     , 
-      {_id_:4 ,_t_:'_0'}
+      {_id_:4 ,_t_:'_1'}
     , 
-      {_id_:5 ,_t_:'_0'}
+      {_id_:5 ,_t_:'_1'}
     ])
   }
 )
