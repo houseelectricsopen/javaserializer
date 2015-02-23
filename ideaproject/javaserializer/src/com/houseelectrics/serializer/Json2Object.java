@@ -1,5 +1,6 @@
 package com.houseelectrics.serializer;
 
+import com.houseelectrics.util.ReflectionUtil;
 import java.lang.reflect.*;
 import java.util.*;
 
@@ -484,12 +485,9 @@ public class Json2Object implements JsonExploreListener
                         arrayFrame.genericClasses.add((Class)pTypes[done]);
                     }
                 }
-
             }
-
         }
     }
-
 
     public void JsonLeaf(String propertyName, String value, boolean isQuoted)
     {

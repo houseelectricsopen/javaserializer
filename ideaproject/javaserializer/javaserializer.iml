@@ -12,6 +12,7 @@
     <orderEntry type="library" name="junit-4.11" level="project" />
     <orderEntry type="library" name="easymock-3.3-sources" level="project" />
     <orderEntry type="library" name="easymock-3.3" level="project" />
+    <orderEntry type="library" name="houseelectricsutil" level="project" />
   </component>
 </module>
 

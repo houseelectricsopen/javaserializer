@@ -1,0 +1,2 @@
+cp ../../../houseelectricsutil/out/artifacts/houseelectricsutil/houseelectricsutil.jar libs
+cp ../../../houseelectricsutil/out/artifacts/houseelectricsutilsrc/houseelectricsutilsrc.jar libs

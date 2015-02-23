@@ -1,5 +1,6 @@
 package com.houseelectrics.serializer.test;
 import com.houseelectrics.serializer.*;
+import com.houseelectrics.util.ReflectionUtil;
 import org.easymock.EasyMock;
 import org.easymock.EasyMockSupport;
 import org.junit.*;
@@ -215,7 +216,6 @@ public class TestFromJson extends EasyMockSupport
         public Object []theTopArray=null;
         public String[] theStringArray = null;
     }
-
 
     @Test
     @TestDescription(description="try embedded Object")
